@@ -54,14 +54,9 @@ public class CompanyApplication {
 
     public String runSparkML(){
 
-return "Project running";
-
-
+return "Project running navigate throuth /data   /structure  /summary  /mostdemandingjobs /popularjob /locations  /skills  /AreaChart  /CompanieCchart  /Demandingjobs ";
 
     }
-
-
-
 
     @GetMapping("/data")
     public String showdata(){
@@ -76,10 +71,6 @@ return "Project running";
 
         return rows.schema();
     }
-
-
-
-
 
     @GetMapping("/summary")
     public String summary(){
@@ -135,22 +126,14 @@ public String mostdemandingjobs(){
      }
 
 
-    System.out.println("==========Get the highest demanding Jobs==========");
+    //System.out.println("==========Get the highest demanding Jobs==========");
    // noNullAndNoDuplicate.select("Title","Company").groupBy("Company","Title").count().sort(desc("count")).show();
     // return nonNullCompany.showString(20,10,false) ;//(3)
-       noNullAndNoDuplicate.select("Title","Company").groupBy("Company","Title").count().sort(desc("count")).show();
+       //noNullAndNoDuplicate.select("Title","Company").groupBy("Company","Title").count().sort(desc("count")).show();
     return  noNullAndNoDuplicate.select("Title","Company").groupBy("Company","Title").count().sort(desc("count")).showString(1000, 10, false);
 
 
 }
-
-
-
-
-
-
-
-
 
     @GetMapping("/popularjob")
     public String popularjob(){
@@ -200,8 +183,8 @@ public String mostdemandingjobs(){
 
         return " https://cdn.discordapp.com/attachments/532104294183206933/862066866355830814/12b01753-fbcc-479f-9ee1-fc26955b2301.png";
     }
-    @GetMapping("/Companies")
-    public String Companies()  {
+    @GetMapping("/CompanieCchart")
+    public String CompanieCchart()  {
 
 
         return "https://cdn.discordapp.com/attachments/532104294183206933/862067868349759541/0489042f-6d63-4848-a0a5-bba4404a7adf.png";
